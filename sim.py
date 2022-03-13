@@ -19,7 +19,7 @@ def strategy_change(N: int) -> int:
         chosen_idx = random.randint(0, 2)
         # Get indices of the doors with a blank behind, i.e. there's
         # no jackpot behind these doors.
-        remaining_door_indices = list(filter(lambda i: i != win_idx, [0, 1, 2]))
+        remaining_door_indices = list(filter(lambda idx: idx != win_idx, range(0, 2)))
         # Now the player changes the initial choice to one of the remaining doors.
         # We simulate that behavior by removing the initial choice from the remaining ones.
         choices = list(filter(lambda idx: idx != chosen_idx, remaining_door_indices))
